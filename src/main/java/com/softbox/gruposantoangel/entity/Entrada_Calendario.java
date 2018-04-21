@@ -72,6 +72,24 @@ public class Entrada_Calendario implements Serializable {
         this.categoria=categoria;
     }
 
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Socio getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socio socio) {
+        this.socio = socio;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
