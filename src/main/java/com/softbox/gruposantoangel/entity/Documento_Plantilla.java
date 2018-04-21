@@ -27,6 +27,7 @@ public class Documento_Plantilla implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "id_doc_plantilla",length =30)
     private Long id_doc_plantilla;
     @Column(name = "nombre", nullable = false, length = 30)
     private String nombre;

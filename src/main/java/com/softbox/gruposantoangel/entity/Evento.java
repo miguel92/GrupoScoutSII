@@ -33,6 +33,7 @@ public class Evento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(length=30, name="id_evento")
     private Long id_evento;
     @Column(nullable=false)
     private String nombre;

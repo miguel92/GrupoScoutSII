@@ -26,6 +26,7 @@ public class Seccion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_seccion", length = 30)
     private Long id_seccion;
     @Column(nullable=false)
     private String nombre;

@@ -28,6 +28,7 @@ public class Documento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "id_documento",length =30)
     private Long id_documento;
     @Column(name = "nombre", nullable = false, length = 30)
     private String nombre;

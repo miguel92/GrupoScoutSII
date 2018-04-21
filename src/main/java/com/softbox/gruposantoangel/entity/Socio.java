@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,12 +25,13 @@ import javax.persistence.TemporalType;
  * @author Tilted-Shugar
  */
 @Entity
+@PrimaryKeyJoinColumn(name="id_Usuario")
 public class Socio extends Usuario implements Serializable{
 
     private static final long serialVersionUID = 1L;
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name ="id_Socio", length=30, nullable=false)
+    private Long id_Socio;
     private String dni;
     @Column(name = "nombre", nullable = false, length=30)
     private String nombre;
@@ -320,41 +322,28 @@ public class Socio extends Usuario implements Serializable{
     
     
     
-    
-    
-    
-    
-    public Long getId() {
-        return id;
+    public Long getId_Socio() {
+        return id_Socio;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_Socio(Long id_Socio) {
+        this.id_Socio = id_Socio;
     }
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+        return super.hashCode();
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Socio)) {
-            return false;
-        }
-        Socio other = (Socio) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return super.equals(object);
     }
 
     @Override
     public String toString() {
-        return "entrega_1.Socio[ id=" + id + " ]";
+        return "entrega_1.Socio[ id_usuario=" + getId_Usuario() + ", id_socio=" + id_Socio + " ]";
     }
     
 }

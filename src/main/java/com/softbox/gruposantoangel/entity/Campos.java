@@ -24,6 +24,7 @@ public class Campos implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_campo", length = 30)
     private Long id_campo;
     @Column(name = "nombre", nullable = false, length = 30)
     private String nombre;

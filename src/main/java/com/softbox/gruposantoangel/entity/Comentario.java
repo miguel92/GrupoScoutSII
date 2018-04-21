@@ -29,8 +29,8 @@ public class Comentario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column (name = "ID",length =30, nullable=false)
-    private Long id;
+    @Column (name = "id_comentario",length =30, nullable=false)
+    private Long id_comentario;
     @Temporal(TemporalType.DATE)
     private Date fecha;
     @Column (length = 255, nullable=false)
@@ -43,7 +43,7 @@ public class Comentario implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 59 * hash + Objects.hashCode(this.id_comentario);
         return hash;
     }
 
@@ -59,18 +59,18 @@ public class Comentario implements Serializable {
             return false;
         }
         final Comentario other = (Comentario) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id_comentario, other.id_comentario)) {
             return false;
         }
         return true;
     }
 
-    public Long getId() {
-        return id;
+    public Long getId_comentario() {
+        return id_comentario;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_comentario(Long id_comentario) {
+        this.id_comentario = id_comentario;
     }
 
     public Date getFecha() {
