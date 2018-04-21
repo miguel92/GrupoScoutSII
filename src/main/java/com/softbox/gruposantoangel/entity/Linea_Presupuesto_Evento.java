@@ -75,21 +75,22 @@ public class Linea_Presupuesto_Evento implements Serializable {
     }
     
     
-    public Long getId() {
+    public Long getLinea() {
         return linea;
     }
 
-    public void setId(Long id) {
+    public void setLinea(Long id) {
         this.linea = id;
     }
     
-    public void setPresupuestoEvento (Presupuesto_Evento presupuesto){
+    public void setPresupuesto_evento (Presupuesto_Evento presupuesto){
         this.presupuesto_evento = presupuesto;
     }
     
-    public Presupuesto_Evento getPresupuesto_Evento(){
+    public Presupuesto_Evento getPresupuesto_evento(){
         return presupuesto_evento;
     }
+    
     @Override
     public int hashCode() {
         int hash = 0;

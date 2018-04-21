@@ -59,7 +59,7 @@ public class Presupuesto_Evento implements Serializable {
     
     
     
-    public Long getIdPresupuesto() {
+    public Long getId_presupuesto() {
         return id_presupuesto;
     }
 
@@ -73,7 +73,7 @@ public class Presupuesto_Evento implements Serializable {
     }
     
     
-    public void setIdPresupuesto(Long id) {
+    public void setId_presupuesto(Long id) {
         this.id_presupuesto = id;
     }
 

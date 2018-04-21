@@ -35,11 +35,11 @@ public class Campos implements Serializable {
     @ManyToMany(mappedBy = "campos")
     private List<Documento_Plantilla> docs_plantilla;
     
-    public Long getId() {
+    public Long getId_campo() {
         return id_campo;
     }
 
-    public void setId(Long id) {
+    public void setId_campo(Long id) {
         this.id_campo = id;
     }
 

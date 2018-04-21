@@ -38,11 +38,11 @@ public class Documento_Plantilla implements Serializable {
     @OneToMany(mappedBy = "doc_plantilla")
     private List<Documento> documentos;
     
-    public Long getId() {
+    public Long getId_doc_plantilla() {
         return id_doc_plantilla;
     }
 
-    public void setId(Long id) {
+    public void setId_doc_plantilla(Long id) {
         this.id_doc_plantilla = id;
     }
 

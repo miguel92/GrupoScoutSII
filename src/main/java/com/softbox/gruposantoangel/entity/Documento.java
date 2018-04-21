@@ -45,11 +45,11 @@ public class Documento implements Serializable {
     @ManyToOne
     private Socio socio;
     
-    public Long getId() {
+    public Long getId_documento() {
         return id_documento;
     }
 
-    public void setId(Long id) {
+    public void setId_documento(Long id) {
         this.id_documento = id;
     }
 

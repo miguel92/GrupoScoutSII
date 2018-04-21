@@ -42,8 +42,6 @@ public class Seccion implements Serializable {
     private List<Evento> eventos;
     @OneToMany(mappedBy="seccion")
     private List<Socio> socios;
-
-    //Constructor
     
 
     //Getters
