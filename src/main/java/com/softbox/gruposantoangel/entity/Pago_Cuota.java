@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -39,11 +40,9 @@ public class Pago_Cuota implements Serializable {
     private Date fecha;
     
     @ManyToOne
-    @Column(length=30)
     private Cuota cuota;
     
     @ManyToOne
-    @Column(length=30)
     private Socio socio;
 
     public Long getId_Pago() {

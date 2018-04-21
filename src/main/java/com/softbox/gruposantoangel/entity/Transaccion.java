@@ -41,7 +41,6 @@ public class Transaccion implements Serializable {
     
     
     @ManyToOne
-    @Column(length=30)
     private Socio socio;
 
     public Long getId_Transaccion() {

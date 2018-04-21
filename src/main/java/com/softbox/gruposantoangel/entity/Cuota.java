@@ -37,7 +37,6 @@ public class Cuota implements Serializable {
     private String descripcion;
     
     @OneToMany(mappedBy="cuota")
-    @Column(length=30)
     private List<Pago_Cuota> pago_cuotas;
 
     public Long getId_Cuota() {
