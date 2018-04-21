@@ -27,49 +27,31 @@ public class Pago_Cuota implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(length=30)
+    private Long id_Pago;
     
-    @Column(nullable=false)
+    
+    @Column(nullable=false,length=100)
     private Integer importe;
     
-    @Column(nullable=false)
+    @Column(nullable=false,length=10)
     @Temporal(TemporalType.DATE)
     private Date fecha;
     
     @ManyToOne
+    @Column(length=30)
     private Cuota cuota;
     
     @ManyToOne
+    @Column(length=30)
     private Socio socio;
-    
-     public Cuota getCuota() {
-        return cuota;
+
+    public Long getId_Pago() {
+        return id_Pago;
     }
 
-    public void setCuota(Cuota cuota) {
-        this.cuota = cuota;
-    }
-    
-    
-    
-    
-    
-    public Socio getSocio() {
-        return socio;
-    }
-
-    public void setSocio(Socio socio) {
-        this.socio = socio;
-    }
-
-   
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_Pago(Long id_Pago) {
+        this.id_Pago = id_Pago;
     }
 
     public Integer getImporte() {
@@ -83,10 +65,28 @@ public class Pago_Cuota implements Serializable {
     public Date getFecha() {
         return fecha;
     }
-    
+
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public Cuota getCuota() {
+        return cuota;
+    }
+
+    public void setCuota(Cuota cuota) {
+        this.cuota = cuota;
+    }
+
+    public Socio getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socio socio) {
+        this.socio = socio;
+    }
+    
+    
 
     
 
@@ -96,7 +96,7 @@ public class Pago_Cuota implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (id_Pago != null ? id_Pago.hashCode() : 0);
         return hash;
     }
 
@@ -107,7 +107,7 @@ public class Pago_Cuota implements Serializable {
             return false;
         }
         Pago_Cuota other = (Pago_Cuota) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id_Pago == null && other.id_Pago != null) || (this.id_Pago != null && !this.id_Pago.equals(other.id_Pago))) {
             return false;
         }
         return true;
@@ -115,7 +115,7 @@ public class Pago_Cuota implements Serializable {
 
     @Override
     public String toString() {
-        return "trabajointernet.Pago_Cuota[ id=" + id + " ]";
+        return "trabajointernet.Pago_Cuota[ id=" + id_Pago + " ]";
     }
     
 }

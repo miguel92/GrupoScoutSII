@@ -26,37 +26,30 @@ public class Transaccion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(length=30)
+    private Long id_Transaccion;
     
-    @Column(nullable=false)
+    @Column(nullable=false, length=50)
     private String concepto;
     
-    @Column(nullable=false)
+    @Column(nullable=false,length=10)
     @Temporal(TemporalType.DATE)
     private Date fecha;
     
-    @Column(nullable=false)
+    @Column(nullable=false,length=100)
     private Integer importe;
     
     
     @ManyToOne
+    @Column(length=30)
     private Socio socio;
 
-    public Socio getSocio() {
-        return socio;
+    public Long getId_Transaccion() {
+        return id_Transaccion;
     }
 
-    public void setSocio(Socio socio) {
-        this.socio = socio;
-    }
-    
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_Transaccion(Long id_Transaccion) {
+        this.id_Transaccion = id_Transaccion;
     }
 
     public String getConcepto() {
@@ -82,6 +75,16 @@ public class Transaccion implements Serializable {
     public void setImporte(Integer importe) {
         this.importe = importe;
     }
+
+    public Socio getSocio() {
+        return socio;
+    }
+
+    public void setSocio(Socio socio) {
+        this.socio = socio;
+    }
+
+    
     
     
 
@@ -90,7 +93,7 @@ public class Transaccion implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (id_Transaccion != null ? id_Transaccion.hashCode() : 0);
         return hash;
     }
 
@@ -101,7 +104,7 @@ public class Transaccion implements Serializable {
             return false;
         }
         Transaccion other = (Transaccion) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id_Transaccion == null && other.id_Transaccion != null) || (this.id_Transaccion != null && !this.id_Transaccion.equals(other.id_Transaccion))) {
             return false;
         }
         return true;
@@ -109,7 +112,7 @@ public class Transaccion implements Serializable {
 
     @Override
     public String toString() {
-        return "trabajointernet.Transaccion[ id=" + id + " ]";
+        return "trabajointernet.Transaccion[ id=" + id_Transaccion + " ]";
     }
     
 }

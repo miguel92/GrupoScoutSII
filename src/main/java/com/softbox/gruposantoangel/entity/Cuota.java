@@ -24,26 +24,68 @@ public class Cuota implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(length=30)
+    private Long id_Cuota;
     
-    @Column(nullable=false)
+    @Column(nullable=false,length=10)
     private Integer importe;
     
-    @Column(nullable=false)
+    @Column(nullable=false,length=50)
     private String nombre;
     
-    @Column(nullable=false)
+    @Column(nullable=false,length=200)
     private String descripcion;
     
     @OneToMany(mappedBy="cuota")
+    @Column(length=30)
     private List<Pago_Cuota> pago_cuotas;
+
+    public Long getId_Cuota() {
+        return id_Cuota;
+    }
+
+    public void setId_Cuota(Long id_Cuota) {
+        this.id_Cuota = id_Cuota;
+    }
+
+    public Integer getImporte() {
+        return importe;
+    }
+
+    public void setImporte(Integer importe) {
+        this.importe = importe;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public List<Pago_Cuota> getPago_cuotas() {
+        return pago_cuotas;
+    }
+
+    public void setPago_cuotas(List<Pago_Cuota> pago_cuotas) {
+        this.pago_cuotas = pago_cuotas;
+    }
     
     
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (id_Cuota != null ? id_Cuota.hashCode() : 0);
         return hash;
     }
 
@@ -54,7 +96,7 @@ public class Cuota implements Serializable {
             return false;
         }
         Cuota other = (Cuota) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id_Cuota == null && other.id_Cuota != null) || (this.id_Cuota != null && !this.id_Cuota.equals(other.id_Cuota))) {
             return false;
         }
         return true;
@@ -62,7 +104,7 @@ public class Cuota implements Serializable {
 
     @Override
     public String toString() {
-        return "trabajointernet.Cuota[ id=" + id + " ]";
+        return "trabajointernet.Cuota[ id=" + id_Cuota + " ]";
     }
     
 }
