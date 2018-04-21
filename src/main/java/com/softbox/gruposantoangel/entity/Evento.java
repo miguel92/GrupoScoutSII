@@ -51,12 +51,12 @@ public class Evento implements Serializable {
     @ManyToOne
     private Seccion seccion;
     @ManyToMany
-    @JoinTable(name = "asistencia", 
+    @JoinTable(name = "ASISTENCIA", 
         joinColumns = @JoinColumn(name = "asistencia_evento_fk"),
         inverseJoinColumns = @JoinColumn(name = "asistencia_socio_fk"))
     private List<Socio> asistentes;
     @ManyToMany
-    @JoinTable(name = "inscripcion", 
+    @JoinTable(name = "INSCRIPCION", 
         joinColumns = @JoinColumn(name = "inscripcion_evento_fk"),
         inverseJoinColumns = @JoinColumn(name = "inscripcion_socio_fk"))
     private List<Socio> inscritos;

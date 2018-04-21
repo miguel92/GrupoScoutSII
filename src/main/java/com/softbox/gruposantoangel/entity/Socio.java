@@ -72,10 +72,10 @@ public class Socio extends Usuario implements Serializable{
     private List <Pago_Cuota> pago_cuotas;
 
 //--BROJA
-    @ManyToMany
+    @ManyToMany(mappedBy = "asistentes")
     private List <Evento> asistentes;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "inscritos")
     private List <Evento> inscritos;
     
     @ManyToOne

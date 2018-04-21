@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -31,7 +32,8 @@ public class Documento_Plantilla implements Serializable {
     private Long id_doc_plantilla;
     @Column(name = "nombre", nullable = false, length = 30)
     private String nombre;
-    @JoinTable(name = "Campos_Documento_Plantilla", joinColumns = @JoinColumn(name = "id_doc_plantilla_fk"), inverseJoinColumns = @JoinColumn(name = "id_campo_fk"))
+    @ManyToMany
+    @JoinTable(name = "CAMPOS_DOCUMENTO_PLANTILLA", joinColumns = @JoinColumn(name = "id_doc_plantilla_fk"), inverseJoinColumns = @JoinColumn(name = "id_campo_fk"))
     private List<Campos> campos;
     @OneToMany(mappedBy = "doc_plantilla")
     private List<Documento> documentos;
