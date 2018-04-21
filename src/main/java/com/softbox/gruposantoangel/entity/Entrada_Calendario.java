@@ -33,8 +33,8 @@ public class Entrada_Calendario implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column (name = "ID",length = 30, nullable=false)
-    private Long id;
+    @Column (name = "id_entrada_calendario",length = 30, nullable=false)
+    private Long id_entrada_calendario;
     @Temporal (TemporalType.DATE)
     private Date fecha;
     @Column (name = "Descripción", length = 200, nullable=false)
@@ -46,8 +46,8 @@ public class Entrada_Calendario implements Serializable {
     private Socio socio;
     
     
-    public Long getId() {
-        return id;
+    public Long getId_entrada_calendario() {
+        return id_entrada_calendario;
     }
     
    
@@ -60,8 +60,8 @@ public class Entrada_Calendario implements Serializable {
         return categoria;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_entrada_calendario(Long id_entrada_calendario) {
+        this.id_entrada_calendario = id_entrada_calendario;
     }
     
     public void setDescripcion(String descripcion){
@@ -75,7 +75,7 @@ public class Entrada_Calendario implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (id_entrada_calendario != null ? id_entrada_calendario.hashCode() : 0);
         return hash;
     }
 
@@ -86,7 +86,7 @@ public class Entrada_Calendario implements Serializable {
             return false;
         }
         Entrada_Calendario other = (Entrada_Calendario) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id_entrada_calendario == null && other.id_entrada_calendario != null) || (this.id_entrada_calendario != null && !this.id_entrada_calendario.equals(other.id_entrada_calendario))) {
             return false;
         }
         return true;
@@ -94,7 +94,7 @@ public class Entrada_Calendario implements Serializable {
 
     @Override
     public String toString() {
-        return "entrega1_scouts.Entrada_Calendario[ id=" + id + " ]";
+        return "entrega1_scouts.Entrada_Calendario[ id=" + id_entrada_calendario + " ]";
     }
     
 }

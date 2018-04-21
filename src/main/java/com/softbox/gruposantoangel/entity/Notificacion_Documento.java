@@ -27,8 +27,8 @@ public class Notificacion_Documento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="ID",length=30, nullable=false)
-    private Long id;
+    @Column(name="id_not_documento",length=30, nullable=false)
+    private Long id_not_documento;
     @Column(name="Estado", length=10,nullable=false)
     private String estado;
     @ManyToOne
@@ -37,16 +37,16 @@ public class Notificacion_Documento implements Serializable {
     private Documento documento;
     
     
-    public Long getId() {
-        return id;
+    public Long getId_not_documento() {
+        return id_not_documento;
     }
     
     public String getEstado(){
         return estado;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_not_documento(Long id) {
+        this.id_not_documento = id_not_documento;
     }
     
     public void setEstado(String estado){
@@ -73,7 +73,7 @@ public class Notificacion_Documento implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (id_not_documento != null ? id_not_documento.hashCode() : 0);
         return hash;
     }
 
@@ -84,7 +84,7 @@ public class Notificacion_Documento implements Serializable {
             return false;
         }
         Notificacion_Documento other = (Notificacion_Documento) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id_not_documento == null && other.id_not_documento != null) || (this.id_not_documento != null && !this.id_not_documento.equals(other.id_not_documento))) {
             return false;
         }
         return true;
@@ -92,7 +92,7 @@ public class Notificacion_Documento implements Serializable {
 
     @Override
     public String toString() {
-        return "entrega1_scouts.Notificacion_Documento[ id=" + id + " ]";
+        return "entrega1_scouts.Notificacion_Documento[ id=" + id_not_documento + " ]";
     }
     
 }

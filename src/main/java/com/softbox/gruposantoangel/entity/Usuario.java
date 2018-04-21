@@ -25,7 +25,8 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name = "id_Usuario", length=30)
+    private Long id_Usuario;
     @Column(name = "pass", nullable = false, length=50)
     private String pass;
     @Column(name = "email", nullable = false, length=50)
@@ -49,18 +50,18 @@ public class Usuario implements Serializable {
     
     
 
-    public Long getId() {
-        return id;
+    public Long getId_Usuario() {
+        return id_Usuario;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_Usuario(Long id) {
+        this.id_Usuario = id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (id_Usuario != null ? id_Usuario.hashCode() : 0);
         return hash;
     }
 
@@ -71,7 +72,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.id_Usuario == null && other.id_Usuario != null) || (this.id_Usuario != null && !this.id_Usuario.equals(other.id_Usuario))) {
             return false;
         }
         return true;
@@ -79,7 +80,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "entrega_1.Usuario[ id=" + id + " ]";
+        return "entrega_1.Usuario[ id=" + id_Usuario + " ]";
     }
     
 }

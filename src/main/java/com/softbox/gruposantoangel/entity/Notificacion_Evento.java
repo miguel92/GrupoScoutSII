@@ -29,6 +29,7 @@ public class Notificacion_Evento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_not_evento", length = 30)
     private Long id_not_evento;
     @Temporal(TemporalType.DATE)
     @Column(nullable=false)

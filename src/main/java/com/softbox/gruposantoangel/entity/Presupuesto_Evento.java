@@ -28,6 +28,7 @@ public class Presupuesto_Evento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(length=30, name="id_presupuesto")
     private Long id_presupuesto;
     @Temporal(TemporalType.DATE)
     private Date fecha;

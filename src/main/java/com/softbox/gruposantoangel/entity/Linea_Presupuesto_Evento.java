@@ -23,6 +23,7 @@ public class Linea_Presupuesto_Evento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(length=30, name="linea")
     private Long linea;
     @Column(name="concepto",length=100 ,nullable=false)
     private String concepto;
